@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Service Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .url {
+            text-align: center;
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Service Dashboard</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Response Time</th>
+        <th>Request Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="response : ${responses}">
+        <td th:text="${response.name}"></td>
+        <td th:text="${response.responseTime}"></td>
+        <td th:text="${response.requestCount}"></td>
+    </tr>
+    </tbody>
+</table>
+<p class="url">URL: <span th:text="${url}"></span></p>
+</body>
+</html>

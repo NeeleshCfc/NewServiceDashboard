@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Service Dashboard</title>
+</head>
+<body>
+<h1>Service Dashboard</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Response Time</th>
+        <th>Request Count</th>
+        <th>Colour</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="response : ${responses}">
+        <td th:text="${response.name}"></td>
+        <td th:text="${response.responseTime}"></td>
+        <td th:text="${response.requestCount}"></td>
+    </tr>
+    </tbody>
+</table>
+<p>URL: <span th:text="${url}"></span></p>
+</body>
+</html>
